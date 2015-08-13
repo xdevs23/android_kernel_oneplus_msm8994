@@ -511,6 +511,7 @@ static int c_show(struct seq_file *m, void *v)
 
 	seq_printf(m, "Processor\t: %s rev %d (%s)\n",
 		cpu_name, read_cpuid_id() & 15, ELF_PLATFORM);
+	
 	for_each_present_cpu(i) {
 		struct cpuinfo_arm64 *cpuinfo = &per_cpu(cpu_data, i);
 		u32 midr = cpuinfo->reg_midr;
